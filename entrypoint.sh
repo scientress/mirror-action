@@ -47,7 +47,7 @@ if [[ "${GIT_SSH_PRIVATE_KEY}" != "" ]]; then
     fi
     chmod 600 ~/.ssh/id_rsa
     if [[ "${GIT_SSH_KNOWN_HOSTS}" != "" ]]; then
-      KNWON_HOSTS_FILE=~/.ssh/known_hosts
+      KNOWN_HOSTS_FILE=~/.ssh/known_hosts
       echo "${GIT_SSH_KNOWN_HOSTS}" > "${KNOWN_HOSTS_FILE}"
       git config --global core.sshCommand "ssh -vvv -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -o UserKnownHostsFile=${KNOWN_HOSTS_FILE}"
     else
